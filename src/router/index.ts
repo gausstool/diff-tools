@@ -28,6 +28,10 @@ const routes = [
         name: 'diff',
         component: EditorDiff,
       },
+      {
+        path: '/:pathMatch(.*)*',
+        redirect: { name: 'diff' },
+      },
     ],
   },
 ];
