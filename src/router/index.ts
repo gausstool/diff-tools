@@ -9,7 +9,7 @@ const EditorDiff = () => import('@/views/PageEditorDiff.vue');
 NProgress.configure({ showSpinner: false });
 // 动态生成路由配置
 const routes = [
-  { path: '', redirect: { name: 'Diff' } },
+  { path: '', redirect: { name: 'diff' } },
   {
     path: '/mobile',
     name: 'mobile',
@@ -25,7 +25,7 @@ const routes = [
     children: [
       {
         path: '/',
-        name: 'Diff',
+        name: 'diff',
         component: EditorDiff,
       },
     ],
@@ -48,7 +48,7 @@ router.beforeEach((to, from, next) => {
     }
   } else {
     if (to.path === '/mobile') {
-      next({ name: 'welcome' });
+      next({ name: 'diff' });
     } else {
       next();
     }
