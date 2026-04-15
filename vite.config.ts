@@ -27,7 +27,7 @@ export default defineConfig(async () => ({
       output: {
         manualChunks(id: string) {
           if (id.includes('node_modules') || id.includes('.pnpm')) {
-            if (id.includes('/vue') || id.includes('/pinia')) {
+            if (id.includes('/vue')) {
               return 'core';
             }
             if (id.includes('monaco-editor')) {
